@@ -5,8 +5,21 @@
 public class BubbleSort {
     public static void main(String[] arg){
         int array[] = {20, 12, 32, 22, 6};
+        printUnsorted(array);
         bubbleSort(array);
         printSorted(array);
+    }
+
+    static void printUnsorted(int array[]){
+        System.out.print("Unsorted array: ");
+        for(int x = 0; x < array.length; x++){
+            if(x == (array.length - 1)){
+                System.out.print(array[x] + ".\n");
+            }
+            else{
+                System.out.print(array[x] + ", ");
+            }
+        }
     }
 
 
@@ -22,17 +35,17 @@ public class BubbleSort {
             }
         }
     }
+    
 
     static void printSorted(int array[]){
         System.out.print("Sorted array: ");
         for(int x = 0; x < array.length; x++){
             if(x == (array.length - 1)){
-                System.out.print(array[x] + ".");
+                System.out.print(array[x] + ".\n");
             }
             else{
                 System.out.print(array[x] + ", ");
             }
         }
     }
-
 }
