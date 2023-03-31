@@ -24,14 +24,33 @@ public class BubbleSort {
 
 
     static void bubbleSort(int array[]){
-        int temp = 0;
+        int temp = 0, progressPrinted = 0, swapAmount = 0;
         for(int x = 0; x < array.length; x++) {
             for(int y = 0; y < array.length - 1; y++){
                 if(array[y] > array[y + 1]){
+                    System.out.println(array[y] + " is greater than " + array[y+1] + "(swap)");
                      temp = array[y];
                      array[y] = array[y + 1];
                      array[y + 1] = temp;
+                     swapAmount++;
                 }
+                else{
+                    System.out.println(array[y] + " and " + array[y+1] + " appears to be in the right order");
+                }
+                progressPrinted++;
+                printProgress(array, swapAmount, progressPrinted);
+            }
+        }
+    }
+
+    static void printProgress(int array[], int swap, int pAmount){
+        System.out.print("Progress " + pAmount + ": ");
+        for(int x = 0; x < array.length; x++){
+            if(x == (array.length - 1)){
+                System.out.print(array[x] + "(Total swap:" + swap + ").\n");
+            }
+            else{
+                System.out.print(array[x] + ", ");
             }
         }
     }
